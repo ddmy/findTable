@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		table{
+			border-collapse:collapse;
+			margin: 30px auto;
+		}
+		td,th{
+			width: 100px;
+			height: 40px;
+			line-height:40px;
+			text-align:center;
+			border:1px solid #eee;
+		}
+		p{
+			line-height: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+		</tr>
+	</table>
+	<table class="findtable">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+		</tr>
+	</table>
+	<table class="findtable">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+		</tr>
+	</table>
+
+	<p>table--ID:findtable</p>
+	<p>f('#findtable').getTableXY(x,y,type)</p>
+	<p>x:第几行</p>
+	<p>y:第几列</p>
+	<p>type:获取什么？</p>
+	<p>'all' 精确的第几行第几列：返回原生DOM对象</p>
+	<p>'tr'获取某一行：返回原生DOM对象数组</p>
+	<p>'td'获取某一列：返回原生DOM对象数组</p>
+	<p>f(elm).refreshTable()刷新tableDOM节点获取</p>
+	<p>请在console面板自行调试</p>
+	<!-- <script src="findTable-min.js"></script> -->
+	<script src="findTable.js"></script>
+	<script>
+	f('.findtable').getTableXY(2,2,'all').innerHTML = '嗡嗡嗡';
+	console.log(f('.findtable').getTableXY(2,'tr'));
+	console.log(f('.findtable').getTableXY(1,'td'));
+
+
+	console.log(f(true)[2].getTableXY(1,2));
+	console.log(f(true)[2].getTableXY(1,2,'all'));
+	console.log(f(true)[2].getTableXY(1,'tr'));
+	console.log(f(true)[2].getTableXY(2,'td'));
+	console.log(f('.findtable',true)[0].getTableXY(0,0));
+	console.log(f('.findtable',true)[1].getTableXY(1,'tr'));
+	console.log(f('.findtable',true)[1].getTableXY(0,4,'all'));
+	console.log(f(true).getTableXY(1,'td'));
+	console.log(f().getTableXY(1,'td'));
+	console.log(f('.findtable',true).getTableXY(1,'td'));
+
+
+
+	</script>
+</body>
+</html>
